@@ -27,7 +27,7 @@ export default function Portfolio() {
       {/* <WhyHireMe /> */}
       <Projects />
       <Contact />
-      <Blog />
+      {/* <Blog /> */}
       <Footer />
     </div>
   );

@@ -70,9 +70,12 @@ export default function Hero() {
           </div>
 
           <div className="flex gap-4 mt-8 relative z-20 mb-8">
+          <a href= "#project">
             <button className="bg-theme-primary text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 hover:bg-theme-primary-hover transition-colors">
               Explore My Work <ArrowUpRight className="w-4 h-4" />
             </button>
+          </a>
+          <a href="#email">
             <button
               className={`border-2 px-8 py-3 rounded-full font-medium transition-colors ${
                 isDark
@@ -82,6 +85,7 @@ export default function Hero() {
             >
               Let's Talk
             </button>
+          </a>
           </div>
         </div>
 

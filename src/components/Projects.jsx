@@ -15,35 +15,35 @@ export default function Projects() {
       description:
         "Enterprise-ready job portal with role-based access and REST APIs.",
       tags: ["Java", "Spring Boot", "React"],
-      url: "#",
+      url: "https://campusvoices.vercel.app/",
     },
     {
       title: "Jobify – Hiring Platform",
       image: "/projects/project01.png",
       description: "Recruitment platform with modern UI and scalable backend.",
       tags: ["Full Stack", "UI/UX"],
-      url: "#",
+      url: "https://jobify-5ur5.onrender.com/",
     },
     {
       title: "Buggy App",
       image: "/projects/project04.png",
       description: "Bug tracking system with dashboards and analytics.",
       tags: ["Dashboard", "Testing"],
-      url: "#",
+      url: "https://buggy-app.onrender.com/",
     },
     {
       title: "Web Spyders",
       image: "/projects/project06.png",
       description: "Agency website with animations and branding.",
       tags: ["Landing Page", "Design"],
-      url: "#",
+      url: "https://webspyderscommunity-xofl.onrender.com/",
     },
     {
       title: "iPhone Product Page",
       image: "/projects/project03.png",
       description: "Apple-inspired product showcase with smooth transitions.",
       tags: ["UI", "Animation"],
-      url: "#",
+      url: "https://mdfaizu18.github.io/Web_Spyders_App/",
     },
     {
       title: "Hot News",
@@ -57,7 +57,21 @@ export default function Projects() {
       image: "/projects/bikeservices.png",
       description: "Platform for bike servicing with user & owner modules.",
       tags: ["Node", "MongoDB", "React"],
-      url: "#",
+      url: "https://bike-services-5fd9.onrender.com/",
+    },
+    {
+      title: "Prometrix - AI Prompt Engineering",
+      image: "/projects/project07.png",
+      description: "Build to maintain the prompts and templates shared public.",
+      tags: ["Node", "MongoDB", "React"],
+      url: "https://prometrix.vercel.app",
+    },
+    {
+      title: "Axis Automation Services - Client",
+      image: "/projects/project08.png",
+      description: "Build for the automation serivce and related services.",
+      tags: ["Tailwind", "React"],
+      url: "https://axis-automation-services.vercel.app",
     },
   ];
 
@@ -80,7 +94,7 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
           {visibleProjects.map((project, index) => {
             const colSpan =
-              index === 0 || index === 1 || index === 5 || index === 6
+              index === 0 || index === 1 || index === 5 || index === 6 || index === 7 || index === 8
                 ? "md:col-span-3"
                 : "md:col-span-2";
 

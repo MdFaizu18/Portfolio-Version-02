@@ -46,14 +46,18 @@ performance, and real-world impact.
               </p>
               <div className="flex gap-4 mt-6">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/mohammed-faizulla-34124a24a/?originalSubdomain=in"
+                  target="_blank"
+                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-700 dark:bg-gray-800 rounded-full flex items-center justify-center hover:bg-theme-primary transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
 
                 <a
-                  href="#"
+                  href="https://www.instagram.com/itz.me.faizu_/"
+                   target="_blank"
+                    rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-700 dark:bg-gray-800 rounded-full flex items-center justify-center hover:bg-theme-primary transition-colors"
                 >
                   <Instagram className="w-5 h-5" />

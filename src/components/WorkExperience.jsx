@@ -6,23 +6,37 @@ export default function WorkExperience() {
   const { isDark } = useTheme();
 
   const experiences = [
-    {
-      company: "Zelosify, Bangalore",
-      period: "Nov 2024",
-      role: "Intern – Software Developer",
-      description:
-        "Worked on building and enhancing web application features using modern frontend and backend technologies. Collaborated with senior engineers to implement clean UI components, optimize performance, and deliver user-focused solutions in an agile environment.",
-      isPrimary: true,
-    },
-    {
-      company: "Hexaware Technologies, Chennai",
-      period: "Aug 2025",
-      role: "Full Time – Premier Graduate Engineer",
-      description:
-        "Underwent intensive enterprise-level training and contributed to real-world application development using Java and full-stack technologies. Gained hands-on experience in designing scalable systems, writing production-ready code, and following industry best practices.",
-      isPrimary: false,
-    },
-  ];
+  {
+    company: "Zelosify, Bangalore",
+    roles: [
+      {
+        role: "Intern – Software Developer",
+        period: "Nov 2024",
+        description:
+          "Worked on building and enhancing web application features using modern frontend and backend technologies. Collaborated with senior engineers to implement clean UI components, optimize performance, and deliver user-focused solutions in an agile environment.",
+      },
+    ],
+    isPrimary: true,
+  },
+  {
+    company: "Hexaware Technologies, Chennai",
+    roles: [
+      {
+        role: "Intern – Maverick, PGET",
+        period: "Aug 2025 – Nov 2025",
+        description:
+          "Completed internship focusing on enterprise application development and backend systems using LLM and AI technologies.",
+      },
+      {
+        role: "Associate Software Developer",
+        period: "Dec 2025 – Present",
+        description:
+          "Currently working on scalable enterprise systems, contributing to full-stack development, performance optimization, and production deployments.",
+      },
+    ],
+    isPrimary: false,
+  },
+];
 
   return (
     <section
@@ -44,46 +58,48 @@ export default function WorkExperience() {
           ></div>
 
           <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative"
-              >
-                <div className="text-right">
-                  <h3
-                    className={`text-2xl font-bold mb-1 ${isDark ? "text-gray-100" : "text-gray-800"}`}
-                  >
-                    {exp.company}
-                  </h3>
-                  <p className={isDark ? "text-gray-400" : "text-gray-500"}>
-                    {exp.period}
-                  </p>
-                </div>
+           {experiences.map((exp, index) => (
+  <div key={index} className="relative grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                <div
-                  className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full border-4 shadow-lg z-10 ${
-                    exp.isPrimary
-                      ? `bg-theme-primary ${isDark ? "border-gray-900" : "border-white"}`
-                      : isDark
-                        ? "bg-gray-100 border-gray-900"
-                        : "bg-gray-800 border-white"
-                  }`}
-                ></div>
+    {/* Left Side Company */}
+    <div className="text-right">
+      <h3 className={`text-2xl font-bold ${isDark ? "text-gray-100" : "text-gray-800"}`}>
+        {exp.company}
+      </h3>
+    </div>
 
-                <div>
-                  <h4
-                    className={`text-2xl font-bold mb-2 ${isDark ? "text-gray-100" : "text-gray-800"}`}
-                  >
-                    {exp.role}
-                  </h4>
-                  <p
-                    className={`leading-relaxed ${isDark ? "text-gray-400" : "text-gray-600"}`}
-                  >
-                    {exp.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+    {/* Timeline Dot */}
+    <div
+      className={`absolute left-1/2 top-4 -translate-x-1/2 w-6 h-6 rounded-full border-4 shadow-lg z-10 ${
+        exp.isPrimary
+          ? `bg-theme-primary ${isDark ? "border-gray-900" : "border-white"}`
+          : isDark
+            ? "bg-gray-100 border-gray-900"
+            : "bg-gray-800 border-white"
+      }`}
+    />
+
+    {/* Right Side Roles */}
+    <div className="space-y-6">
+      {exp.roles.map((role, rIndex) => (
+        <div key={rIndex} className="relative pl-6 border-l-2 border-dashed border-gray-400">
+
+          <div className="absolute -left-2 top-2 w-4 h-4 rounded-full bg-theme-primary"></div>
+
+          <h4 className={`text-xl font-bold ${isDark ? "text-gray-100" : "text-gray-800"}`}>
+            {role.role}
+          </h4>
+          <p className={`text-sm mb-2 ${isDark ? "text-gray-400" : "text-gray-500"}`}>
+            {role.period}
+          </p>
+          <p className={`${isDark ? "text-gray-400" : "text-gray-600"}`}>
+            {role.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+))}
           </div>
         </div>
       </div>
