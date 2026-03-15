@@ -52,7 +52,7 @@ export default function WorkExperience() {
 
         <div className="relative">
           <div
-            className={`absolute left-1/2 top-0 bottom-0 w-0.5 border-l-2 border-dashed -translate-x-1/2 ${
+            className={`absolute left-1/2 top-0 bottom-0 w-0.5 md:border-l-2 md:border-dashed -translate-x-1/2 ${
               isDark ? "border-gray-700" : "border-gray-300"
             }`}
           ></div>
@@ -69,15 +69,14 @@ export default function WorkExperience() {
     </div>
 
     {/* Timeline Dot */}
-    <div
-      className={`absolute left-1/2 top-4 -translate-x-1/2 w-6 h-6 rounded-full border-4 shadow-lg z-10 ${
-        exp.isPrimary
-          ? `bg-theme-primary ${isDark ? "border-gray-900" : "border-white"}`
-          : isDark
-            ? "bg-gray-100 border-gray-900"
-            : "bg-gray-800 border-white"
-      }`}
-    />
+               <div
+                 className={`hidden md:block absolute left-1/2 top-4 -translate-x-1/2 w-6 h-6 rounded-full border-4 shadow-lg z-10 ${exp.isPrimary
+                     ? `bg-theme-primary ${isDark ? "border-gray-900" : "border-white"}`
+                     : isDark
+                       ? "bg-gray-100 border-gray-900"
+                       : "bg-gray-800 border-white"
+                   }`}
+               />
 
     {/* Right Side Roles */}
     <div className="space-y-6">

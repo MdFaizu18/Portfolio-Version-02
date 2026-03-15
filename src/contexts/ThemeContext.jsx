@@ -29,7 +29,7 @@ export const themes = {
 
 export function ThemeProvider({ children }) {
   const [isDark, setIsDark] = useState(false);
-  const [currentTheme, setCurrentTheme] = useState("orange");
+  const [currentTheme, setCurrentTheme] = useState("purple");
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");

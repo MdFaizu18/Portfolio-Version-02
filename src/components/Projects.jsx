@@ -3,6 +3,15 @@
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
+import project02 from "../assets/projects/project02.png";
+import project01 from "../assets/projects/project01.png";
+import project04 from "../assets/projects/project04.png";
+import project06 from "../assets/projects/project06.png";
+import project03 from "../assets/projects/project03.png";
+import project05 from "../assets/projects/project05.png";
+import bikeservices from "../assets/projects/bikeservices.png";
+import project07 from "../assets/projects/project07.png";
+import project08 from "../assets/projects/project08.png";
 
 export default function Projects() {
   const { isDark } = useTheme();
@@ -11,7 +20,7 @@ export default function Projects() {
   const projects = [
     {
       title: "CareerCrafter – Job Portal",
-      image: "/projects/project02.png",
+      image: project02,
       description:
         "Enterprise-ready job portal with role-based access and REST APIs.",
       tags: ["Java", "Spring Boot", "React"],
@@ -19,56 +28,56 @@ export default function Projects() {
     },
     {
       title: "Jobify – Hiring Platform",
-      image: "/projects/project01.png",
+      image: project01,
       description: "Recruitment platform with modern UI and scalable backend.",
       tags: ["Full Stack", "UI/UX"],
       url: "https://jobify-5ur5.onrender.com/",
     },
     {
       title: "Buggy App",
-      image: "/projects/project04.png",
+      image: project04,
       description: "Bug tracking system with dashboards and analytics.",
       tags: ["Dashboard", "Testing"],
       url: "https://buggy-app.onrender.com/",
     },
     {
       title: "Web Spyders",
-      image: "/projects/project06.png",
+      image: project06,
       description: "Agency website with animations and branding.",
       tags: ["Landing Page", "Design"],
       url: "https://webspyderscommunity-xofl.onrender.com/",
     },
     {
       title: "iPhone Product Page",
-      image: "/projects/project03.png",
+      image: project03,
       description: "Apple-inspired product showcase with smooth transitions.",
       tags: ["UI", "Animation"],
       url: "https://mdfaizu18.github.io/Web_Spyders_App/",
     },
     {
       title: "Hot News",
-      image: "/projects/project05.png",
+      image: project05,
       description: "Real-time news platform with category filters.",
       tags: ["API", "React"],
       url: "#",
     },
     {
       title: "Bike Services",
-      image: "/projects/bikeservices.png",
+      image: bikeservices,
       description: "Platform for bike servicing with user & owner modules.",
       tags: ["Node", "MongoDB", "React"],
       url: "https://bike-services-5fd9.onrender.com/",
     },
     {
       title: "Prometrix - AI Prompt Engineering",
-      image: "/projects/project07.png",
+      image: project07,
       description: "Build to maintain the prompts and templates shared public.",
       tags: ["Node", "MongoDB", "React"],
       url: "https://prometrix.vercel.app",
     },
     {
       title: "Axis Automation Services - Client",
-      image: "/projects/project08.png",
+      image: project08,
       description: "Build for the automation serivce and related services.",
       tags: ["Tailwind", "React"],
       url: "https://axis-automation-services.vercel.app",

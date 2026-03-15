@@ -2,7 +2,7 @@
 
 import { ArrowUpRight, Quote, Star } from "lucide-react"
 import { useTheme } from "../contexts/ThemeContext"
-import image from "../../public/me/me1.png"
+import image from "../assets/me/me1.png"
 
 export default function Hero() {
   const { isDark } = useTheme()

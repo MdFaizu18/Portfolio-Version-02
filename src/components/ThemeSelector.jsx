@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Palette } from "lucide-react";
+import { Palette, Check } from "lucide-react";
 import { useTheme, themes } from "../contexts/ThemeContext";
 
 export default function ThemeSelector() {
@@ -17,9 +17,11 @@ export default function ThemeSelector() {
 
   return (
     <div className="relative">
+
+      {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-3 rounded-full bg-gray-800 dark:bg-gray-700 text-white hover:opacity-80 transition-opacity"
+        className="p-3 rounded-full bg-gray-800/90 dark:bg-gray-700 backdrop-blur-md text-white hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
         aria-label="Select theme color"
       >
         <Palette className="w-5 h-5" />
@@ -27,15 +29,20 @@ export default function ThemeSelector() {
 
       {isOpen && (
         <>
+          {/* Overlay */}
           <div
             className="fixed inset-0 z-40"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute top-full right-0 mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 z-50 min-w-[200px]">
-            <p className="text-sm font-semibold mb-3 text-gray-700 dark:text-gray-200">
-              Choose Theme
+
+          {/* ================= DESKTOP DROPDOWN ================= */}
+          <div className="hidden md:block absolute right-0 mt-3 w-64 rounded-xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-gray-200 dark:border-gray-700 shadow-2xl p-5 z-50 animate-fadeIn">
+
+            <p className="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-4">
+              🎨 Choose Theme
             </p>
-            <div className="space-y-2">
+
+            <div className="grid grid-cols-2 gap-3">
               {Object.keys(themes).map((theme) => (
                 <button
                   key={theme}
@@ -43,31 +50,64 @@ export default function ThemeSelector() {
                     changeTheme(theme);
                     setIsOpen(false);
                   }}
-                  className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
-                    currentTheme === theme
-                      ? "bg-gray-100 dark:bg-gray-700"
-                      : "hover:bg-gray-50 dark:hover:bg-gray-700"
-                  }`}
+                  className={`relative flex flex-col items-center justify-center p-4 rounded-lg border transition-all duration-200
+                  ${currentTheme === theme
+                      ? "border-theme-primary bg-gray-100 dark:bg-gray-800"
+                      : "border-transparent hover:bg-gray-50 dark:hover:bg-gray-800"
+                    }`}
                 >
                   <div
-                    className="w-6 h-6 rounded-full border-2 border-gray-300 dark:border-gray-600"
+                    className="w-10 h-10 rounded-full shadow-md border-2 border-white"
                     style={{ backgroundColor: themeColors[theme] }}
                   />
-                  <span className="text-sm font-medium capitalize text-gray-700 dark:text-gray-200">
+
+                  <span className="text-xs mt-2 capitalize text-gray-700 dark:text-gray-300">
                     {theme}
                   </span>
+
                   {currentTheme === theme && (
-                    <svg
-                      className="w-4 h-4 ml-auto text-gray-700 dark:text-gray-200"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    <Check className="absolute top-2 right-2 w-4 h-4 text-theme-primary" />
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* ================= MOBILE BOTTOM SHEET ================= */}
+          <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 rounded-t-3xl shadow-2xl p-6 z-50 animate-slideUp">
+
+            {/* drag indicator */}
+            <div className="w-12 h-1.5 bg-gray-300 dark:bg-gray-700 rounded-full mx-auto mb-5"></div>
+
+            <p className="text-center text-sm font-semibold text-gray-700 dark:text-gray-200 mb-6">
+              🎨 Select Theme
+            </p>
+
+            <div className="grid grid-cols-2 gap-4">
+              {Object.keys(themes).map((theme) => (
+                <button
+                  key={theme}
+                  onClick={() => {
+                    changeTheme(theme);
+                    setIsOpen(false);
+                  }}
+                  className={`flex items-center gap-3 p-4 rounded-xl transition-all
+                  ${currentTheme === theme
+                      ? "bg-gray-100 dark:bg-gray-800 ring-2 ring-theme-primary"
+                      : "bg-gray-50 dark:bg-gray-800 hover:scale-[1.02]"
+                    }`}
+                >
+                  <div
+                    className="w-8 h-8 rounded-full shadow border-2 border-white"
+                    style={{ backgroundColor: themeColors[theme] }}
+                  />
+
+                  <span className="text-sm capitalize text-gray-700 dark:text-gray-200">
+                    {theme}
+                  </span>
+
+                  {currentTheme === theme && (
+                    <Check className="ml-auto w-4 h-4 text-theme-primary" />
                   )}
                 </button>
               ))}

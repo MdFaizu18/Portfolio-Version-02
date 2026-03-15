@@ -8,7 +8,7 @@ export default function ThemeControls() {
   const { isDark, toggleDarkMode } = useTheme();
 
   return (
-    <div className="fixed top-6 right-8 z-50 flex items-center gap-3">
+    <div className="fixed top-6 right-8 z-50 flex flex-col md:flex-row items-center  md:gap-4 items-center gap-3">
       <ThemeSelector />
       <button
         onClick={toggleDarkMode}
